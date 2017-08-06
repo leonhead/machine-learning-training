@@ -14,7 +14,7 @@ import com.qubit.dl4j.DatasetLoader;
 
 public class HousingTestMain {
 
-	public static final String DATASET_PATH = "resources/housing.data";
+	public static final String DATASET_PATH = "com/qubit/datasets/housing.data";
 	public static final int LINE_TO_SKIP = 0;
 	public static final int BATCH_SIZE  = 100;
 	public static final String DELIMITER  = ",";

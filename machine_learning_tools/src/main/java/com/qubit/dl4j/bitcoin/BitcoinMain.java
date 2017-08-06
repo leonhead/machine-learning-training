@@ -14,7 +14,7 @@ import com.qubit.dl4j.DatasetLoader;
 
 public class BitcoinMain {
 
-	public static final String DATASET_PATH = "resources/btc.csv";
+	public static final String DATASET_PATH = "com/qubit/datasets/btc.csv";
 	public static final int LINE_TO_SKIP = 1;
 	public static final int BATCH_SIZE  = 100;
 	public static final String DELIMITER  = ",";
