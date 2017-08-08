@@ -1,6 +1,7 @@
 package com.qubit.dl4j;
 
 import org.apache.log4j.Logger;
+import org.deeplearning4j.nn.conf.MultiLayerConfiguration;
 import org.nd4j.linalg.api.ndarray.INDArray;
 import org.nd4j.linalg.dataset.SplitTestAndTrain;
 import org.nd4j.linalg.dataset.api.preprocessor.DataNormalization;
@@ -26,6 +27,10 @@ public class DataController {
 	public void plot(){
 		view.plot();
 	}
+	
+	public void enableUI(){
+		neuronalNetwork.enableUI();
+	}
 
 	public void createTestAndTrainDataSet(double percentOfTrain){
 		SplitTestAndTrain trainAndTest = preprocessingHandler.splitTrainAndTest(dataLoader.getAllData(), percentOfTrain);
@@ -37,15 +42,16 @@ public class DataController {
 		preprocessingHandler.normilizeData();
 	}
 
-	public void createNeuronalNetwork(int inputLayer, int hiddenLayer, int outputLayer){
+	public void createNeuronalNetwork(MultiLayerConfiguration conf){
 		logger.debug("Build model...");
-		neuronalNetwork = new NeuronalNetwork(inputLayer,hiddenLayer,outputLayer);
+		neuronalNetwork = new NeuronalNetwork();
+		neuronalNetwork.createNetwork(conf);
 
 	}
 
-	public void trainNeuronalNetwork(){
+	public void trainNeuronalNetwork(int nEpochs){
 		logger.debug("Train model...");
-		neuronalNetwork.train(preprocessingHandler.getTrainingData());	
+		neuronalNetwork.train(preprocessingHandler.getTrainingData(),nEpochs);	
 
 	}
 
@@ -63,14 +69,6 @@ public class DataController {
 
 	public DataNormalization getNormilizer(){
 		return preprocessingHandler.getNormalizer();
-	}
-
-	public int getOutputlayerSize(){
-		return neuronalNetwork.getNumOutputs();
-	}
-
-	public int getInputLayerSize(){
-		return neuronalNetwork.getNumInput();
 	}
 
 }
