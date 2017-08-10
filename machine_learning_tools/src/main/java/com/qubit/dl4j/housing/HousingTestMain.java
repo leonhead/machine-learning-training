@@ -50,7 +50,8 @@ public class HousingTestMain {
 		DataPlot view = new DataPlot();
 		DatasetLoader dataLoader;
 		try {
-			dataLoader = new DatasetLoader(DATASET_PATH,BATCH_SIZE,LINE_TO_SKIP,DELIMITER,TRAGET_REGRESSION_INDEX);
+			dataLoader = new DatasetLoader();
+			dataLoader.loadCSVRecordData(DATASET_PATH,BATCH_SIZE,LINE_TO_SKIP,DELIMITER,TRAGET_REGRESSION_INDEX,true);
 
 			DataPreprocessing preprocessingHandler = new DataPreprocessing();
 			DataController controller = new DataController(view, preprocessingHandler,dataLoader);
@@ -86,7 +87,7 @@ public class HousingTestMain {
 			
 			
 			controller.trainNeuronalNetwork(nEpochs);
-			controller.testNeuronalNetwork();
+			controller.testRegressionNeuronalNetwork();
 
 
 			// 0.09744	0	5.96	0	0.499	5.841	61.4	3.3779	5	279	19.2	377.56	11.41	20

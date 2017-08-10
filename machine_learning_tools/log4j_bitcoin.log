@@ -78,3 +78,149 @@ Column    MSE            MAE            RMSE           RSE            R^2
 col_0     2.96226e+14    1.46355e+07    1.72112e+07    6.17987e-01    6.24692e-01    
 
 2017-08-08 16:17:40 DEBUG DataController:67 - predict: 32,033,774.00
+2017-08-10 13:49:09 DEBUG DataController:77 - Build model...
+2017-08-10 13:49:09 DEBUG DataController:84 - Train model...
+2017-08-10 13:49:10 DEBUG DataController:90 - Evaluate model...
+2017-08-10 13:49:10 INFO  DataController:92 - 
+Column    MSE            MAE            RMSE           RSE            R^2            
+col_0     6.84394e+00    2.09965e+00    2.61609e+00    1.72818e-01    9.10997e-01    
+
+2017-08-10 13:49:10 DEBUG DataController:98 - predict: 17.52
+2017-08-10 13:56:27 DEBUG DataController:77 - Build model...
+2017-08-10 13:56:27 DEBUG DataController:84 - Train model...
+2017-08-10 13:56:28 DEBUG DataController:90 - Evaluate model...
+2017-08-10 13:56:28 INFO  DataController:92 - 
+Column    MSE            MAE            RMSE           RSE            R^2            
+col_0     7.48467e+00    1.94279e+00    2.73581e+00    2.01644e-01    8.95100e-01    
+
+2017-08-10 13:56:28 DEBUG DataController:98 - predict: 18.58
+2017-08-10 13:57:08 DEBUG DataController:77 - Build model...
+2017-08-10 13:57:08 DEBUG DataController:84 - Train model...
+2017-08-10 13:57:09 DEBUG DataController:90 - Evaluate model...
+2017-08-10 13:57:09 INFO  DataController:92 - 
+Column    MSE            MAE            RMSE           RSE            R^2            
+col_0     4.24246e+00    1.61287e+00    2.05972e+00    1.29325e-01    9.34330e-01    
+
+2017-08-10 13:57:09 DEBUG DataController:98 - predict: 19.56
+2017-08-10 14:26:01 DEBUG DataController:77 - Build model...
+2017-08-10 14:26:02 DEBUG DataController:84 - Train model...
+2017-08-10 14:26:02 DEBUG DataController:90 - Evaluate model...
+2017-08-10 14:34:00 DEBUG DataController:77 - Build model...
+2017-08-10 14:34:00 DEBUG DataController:84 - Train model...
+2017-08-10 14:34:01 DEBUG DataController:95 - Evaluate model...
+2017-08-10 14:34:01 INFO  DataController:97 - 
+
+Examples labeled as 0 classified by model as 0: 20 times
+Examples labeled as 0 classified by model as 1: 6 times
+Examples labeled as 1 classified by model as 0: 4 times
+Examples labeled as 1 classified by model as 1: 20 times
+
+
+==========================Scores========================================
+ Accuracy:        0.8
+ Precision:       0.8013
+ Recall:          0.8013
+ F1 Score:        0.8013
+========================================================================
+2017-08-10 14:34:49 DEBUG DataController:77 - Build model...
+2017-08-10 14:34:49 DEBUG DataController:84 - Train model...
+2017-08-10 14:34:49 DEBUG DataController:95 - Evaluate model...
+2017-08-10 14:34:50 INFO  DataController:97 - 
+
+Examples labeled as 0 classified by model as 0: 23 times
+Examples labeled as 0 classified by model as 1: 3 times
+Examples labeled as 1 classified by model as 0: 3 times
+Examples labeled as 1 classified by model as 1: 21 times
+
+
+==========================Scores========================================
+ Accuracy:        0.88
+ Precision:       0.8798
+ Recall:          0.8798
+ F1 Score:        0.8798
+========================================================================
+2017-08-10 14:35:40 DEBUG DataController:77 - Build model...
+2017-08-10 14:35:40 DEBUG DataController:84 - Train model...
+2017-08-10 14:35:41 DEBUG DataController:95 - Evaluate model...
+2017-08-10 14:35:41 INFO  DataController:97 - 
+
+Examples labeled as 0 classified by model as 0: 23 times
+Examples labeled as 0 classified by model as 1: 3 times
+Examples labeled as 1 classified by model as 0: 3 times
+Examples labeled as 1 classified by model as 1: 21 times
+
+
+==========================Scores========================================
+ Accuracy:        0.88
+ Precision:       0.8798
+ Recall:          0.8798
+ F1 Score:        0.8798
+========================================================================
+2017-08-10 14:36:01 DEBUG DataController:77 - Build model...
+2017-08-10 14:36:02 DEBUG DataController:84 - Train model...
+2017-08-10 14:36:03 DEBUG DataController:95 - Evaluate model...
+2017-08-10 14:36:03 INFO  DataController:97 - 
+
+Examples labeled as 0 classified by model as 0: 20 times
+Examples labeled as 0 classified by model as 1: 6 times
+Examples labeled as 1 classified by model as 0: 4 times
+Examples labeled as 1 classified by model as 1: 20 times
+
+
+==========================Scores========================================
+ Accuracy:        0.8
+ Precision:       0.8013
+ Recall:          0.8013
+ F1 Score:        0.8013
+========================================================================
+2017-08-10 14:36:50 DEBUG DataController:77 - Build model...
+2017-08-10 14:36:50 DEBUG DataController:84 - Train model...
+2017-08-10 14:36:51 DEBUG DataController:95 - Evaluate model...
+2017-08-10 14:36:51 INFO  DataController:97 - 
+
+Examples labeled as 0 classified by model as 0: 23 times
+Examples labeled as 0 classified by model as 1: 3 times
+Examples labeled as 1 classified by model as 0: 3 times
+Examples labeled as 1 classified by model as 1: 21 times
+
+
+==========================Scores========================================
+ Accuracy:        0.88
+ Precision:       0.8798
+ Recall:          0.8798
+ F1 Score:        0.8798
+========================================================================
+2017-08-10 14:37:33 DEBUG DataController:77 - Build model...
+2017-08-10 14:37:33 DEBUG DataController:84 - Train model...
+2017-08-10 14:37:34 DEBUG DataController:95 - Evaluate model...
+2017-08-10 14:37:34 INFO  DataController:97 - 
+
+Examples labeled as 0 classified by model as 0: 20 times
+Examples labeled as 0 classified by model as 1: 6 times
+Examples labeled as 1 classified by model as 0: 4 times
+Examples labeled as 1 classified by model as 1: 20 times
+
+
+==========================Scores========================================
+ Accuracy:        0.8
+ Precision:       0.8013
+ Recall:          0.8013
+ F1 Score:        0.8013
+========================================================================
+2017-08-10 14:38:36 DEBUG DataController:77 - Build model...
+2017-08-10 14:38:36 DEBUG DataController:84 - Train model...
+2017-08-10 14:38:37 DEBUG DataController:95 - Evaluate model...
+2017-08-10 14:38:37 INFO  DataController:97 - 
+
+Examples labeled as 0 classified by model as 0: 20 times
+Examples labeled as 0 classified by model as 1: 6 times
+Examples labeled as 1 classified by model as 0: 4 times
+Examples labeled as 1 classified by model as 1: 20 times
+
+
+==========================Scores========================================
+ Accuracy:        0.8
+ Precision:       0.8013
+ Recall:          0.8013
+ F1 Score:        0.8013
+========================================================================

@@ -5,6 +5,7 @@ import org.deeplearning4j.nn.conf.MultiLayerConfiguration;
 import org.nd4j.linalg.api.ndarray.INDArray;
 import org.nd4j.linalg.dataset.SplitTestAndTrain;
 import org.nd4j.linalg.dataset.api.preprocessor.DataNormalization;
+import org.nd4j.linalg.factory.Nd4j;
 
 
 
@@ -25,7 +26,37 @@ public class DataController {
 	}
 
 	public void plot(){
-		view.plot();
+		INDArray features = dataLoader.getAllData().getFeatures();
+		INDArray labels = dataLoader.getAllData().getLabels();
+		
+		  //Plot the data:
+        double xMin = 0;
+        double xMax = 1.0;
+        double yMin = -0.2;
+        double yMax = 0.8;
+
+        //Let's evaluate the predictions at every point in the x/y input space
+        int nPointsPerAxis = 100;
+        double[][] evalPoints = new double[nPointsPerAxis*nPointsPerAxis][2];
+        int count = 0;
+        for( int i=0; i<nPointsPerAxis; i++ ){
+            for( int j=0; j<nPointsPerAxis; j++ ){
+                double x = i * (xMax-xMin)/(nPointsPerAxis-1) + xMin;
+                double y = j * (yMax-yMin)/(nPointsPerAxis-1) + yMin;
+
+                evalPoints[count][0] = x;
+                evalPoints[count][1] = y;
+
+                count++;
+            }
+        }
+
+		
+		
+		INDArray backgroundIn = Nd4j.create(evalPoints);
+        INDArray backgroundOut = neuronalNetwork.getModel().output(backgroundIn);
+		
+		view.plotData(features, labels, backgroundIn, backgroundOut, nPointsPerAxis);
 	}
 	
 	public void enableUI(){
@@ -55,9 +86,14 @@ public class DataController {
 
 	}
 
-	public void testNeuronalNetwork(){
+	public void testRegressionNeuronalNetwork(){
 		logger.debug("Evaluate model...");
-		String evaluationResults = neuronalNetwork.eval(preprocessingHandler.getTestData());
+		String evaluationResults = neuronalNetwork.evalRegression(preprocessingHandler.getTestData());
+		logger.info("\n"+evaluationResults);
+	}
+	public void testClassificationNeuronalNetwork(int outputLayer){
+		logger.debug("Evaluate model...");
+		String evaluationResults = neuronalNetwork.evalClassification(preprocessingHandler.getTestData(),outputLayer);
 		logger.info("\n"+evaluationResults);
 	}
 

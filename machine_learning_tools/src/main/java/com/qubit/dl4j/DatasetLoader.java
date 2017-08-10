@@ -15,25 +15,39 @@ public class DatasetLoader {
 
 	private DataSet allData;
 
-	public DatasetLoader(String filename, int batchSize, int numLinesToSkip, String delimiter, int targetRegressionIndex) throws FileNotFoundException, IOException, InterruptedException {
-		loadCSVRecordData(filename, batchSize, numLinesToSkip, delimiter,targetRegressionIndex);
+	public DatasetLoader(){
 	}
 
 
-	private DataSet loadCSVRecordData(String filename, int batchSize, int numLinesToSkip, String delimiter, int targetRegressionIndex) throws FileNotFoundException, IOException, InterruptedException{
+	public DataSet loadCSVRecordData(String filename, int batchSize, int numLinesToSkip, String delimiter, int targetRegressionIndex, boolean regression) throws FileNotFoundException, IOException, InterruptedException{
 
 		RecordReader recordReader = new CSVRecordReader(numLinesToSkip,delimiter);	
 		recordReader.initialize(new FileSplit(new ClassPathResource(filename).getFile()));
 
-		DataSetIterator iterator = new RecordReaderDataSetIterator(recordReader, batchSize, targetRegressionIndex, targetRegressionIndex, true);
+		DataSetIterator iterator = new RecordReaderDataSetIterator(recordReader, batchSize, targetRegressionIndex, targetRegressionIndex, regression);
 		allData = iterator.next();
 
 		return allData;
 	}
+	
+
+	public DataSet loadCSVRecordData(String filename, int batchSize, int numLinesToSkip, String delimiter, int numPossibleLabels) throws FileNotFoundException, IOException, InterruptedException {
+		RecordReader recordReader = new CSVRecordReader(numLinesToSkip,delimiter);	
+		recordReader.initialize(new FileSplit(new ClassPathResource(filename).getFile()));
+
+		DataSetIterator iterator = new RecordReaderDataSetIterator(recordReader, batchSize,0,numPossibleLabels);
+		allData = iterator.next();
+
+		return allData;
+		
+	}
+	
 
 
 	public DataSet getAllData() {
 		return allData;
 	}
+
+
 
 }

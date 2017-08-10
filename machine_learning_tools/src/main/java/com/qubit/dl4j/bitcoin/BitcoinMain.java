@@ -50,7 +50,8 @@ public class BitcoinMain {
 		DataPlot view = new DataPlot();
 		DatasetLoader dataLoader;
 		try {
-			dataLoader = new DatasetLoader(DATASET_PATH,BATCH_SIZE,LINE_TO_SKIP,DELIMITER,TRAGET_REGRESSION_INDEX);
+			dataLoader = new DatasetLoader();
+			dataLoader.loadCSVRecordData(DATASET_PATH,BATCH_SIZE,LINE_TO_SKIP,DELIMITER,TRAGET_REGRESSION_INDEX,true);
 
 			DataPreprocessing preprocessingHandler = new DataPreprocessing();
 			DataController controller = new DataController(view, preprocessingHandler,dataLoader);
@@ -86,7 +87,7 @@ public class BitcoinMain {
 			controller.createNeuronalNetwork(conf);
 			controller.enableUI();
 			controller.trainNeuronalNetwork(nEpochs);
-			controller.testNeuronalNetwork();
+			controller.testRegressionNeuronalNetwork();
 
 			// 3213	1	50	1498680256079	52615.4253779639	4104.9213721832	234.0809635049	0.2517	9256.2101516481	||205246.068609161||	6	85677426.3714731
 			final INDArray input = Nd4j.create(new double[] {3213,1,50,1498680256,52615.4253779639,4104.9213721832,234.0809635049,0.2517,9256.2101516481,85677426.3714731}, new int[] { OUTPUT_LAYER, INPUT_LAYER });		
