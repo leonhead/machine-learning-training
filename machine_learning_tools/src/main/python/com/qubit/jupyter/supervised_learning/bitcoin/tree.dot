@@ -1,0 +1,20 @@
+digraph Tree {
+node [shape=box, style="filled", color="black"] ;
+0 [label="Volume <= 2371.0\nsamples = 93\nvalue = [39, 1, 53]\nclass = 1", fillcolor="#8139e542"] ;
+1 [label="SMA15 <= 5005.1348\nsamples = 84\nvalue = [30, 1, 53]\nclass = 1", fillcolor="#8139e56d"] ;
+0 -> 1 [labeldistance=2.5, labelangle=45, headlabel="True"] ;
+2 [label="SMA15 <= 2833.1499\nsamples = 78\nvalue = [25, 1, 52]\nclass = 1", fillcolor="#8139e582"] ;
+1 -> 2 ;
+3 [label="samples = 59\nvalue = [23, 1, 35]\nclass = 1", fillcolor="#8139e555"] ;
+2 -> 3 ;
+4 [label="samples = 19\nvalue = [2, 0, 17]\nclass = 1", fillcolor="#8139e5e1"] ;
+2 -> 4 ;
+5 [label="Close <= 316.78\nsamples = 6\nvalue = [5, 0, 1]\nclass = -1", fillcolor="#e58139cc"] ;
+1 -> 5 ;
+6 [label="samples = 2\nvalue = [1, 0, 1]\nclass = -1", fillcolor="#e5813900"] ;
+5 -> 6 ;
+7 [label="samples = 4\nvalue = [4, 0, 0]\nclass = -1", fillcolor="#e58139ff"] ;
+5 -> 7 ;
+8 [label="samples = 9\nvalue = [9, 0, 0]\nclass = -1", fillcolor="#e58139ff"] ;
+0 -> 8 [labeldistance=2.5, labelangle=-45, headlabel="False"] ;
+}
