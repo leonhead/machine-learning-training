@@ -1,6 +1,7 @@
 package com.qubit.dl4j;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.deeplearning4j.nn.conf.MultiLayerConfiguration;
 import org.nd4j.linalg.api.ndarray.INDArray;
 import org.nd4j.linalg.dataset.SplitTestAndTrain;
@@ -11,7 +12,7 @@ import org.nd4j.linalg.factory.Nd4j;
 
 public class DataController {
 
-	final static Logger logger = Logger.getLogger(DataController.class);
+	final static Logger logger =  LogManager.getLogger(DataController.class);
 
 	private DataPreprocessing preprocessingHandler;
 	private DataPlot view;	
